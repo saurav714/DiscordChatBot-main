@@ -1,162 +1,137 @@
-Welcome to the repository for the DiscordChatBot project, a chatbot built using Python and powered by OpenAI's API to facilitate natural conversations on Discord. The bot leverages GPT-4.0/Deepseek R1 to create contextually fitting and human-like responses, making interactions with users more engaging and dynamic.
+🤖 Discord Multi-AI ChatBot
+A powerful, flexible Discord chatbot that supports multiple AI providers including OpenAI GPT-4, DeepSeek R1, Anthropic Claude, and more. Switch between providers instantly without changing code!
+Show Image
+Show Image
+Show Image
+✨ Features
 
-Table of Contents
+🔄 Multi-AI Provider Support - OpenAI, DeepSeek, Claude, Groq, local models
+💬 Context-Aware Conversations - Maintains chat history for natural dialogue
+🚫 Smart Response Filtering - Prevents repetitive responses using similarity detection
+⚡ Asynchronous Processing - Handles multiple conversations simultaneously
+🔧 Highly Configurable - Customize via environment variables
+💰 Cost Optimization - Choose cheaper providers like DeepSeek or free local models
+🛡️ Robust Error Handling - Graceful fallbacks and detailed error messages
 
-Overview
+🚀 Quick Start
+Prerequisites
 
-Key Features
-
-Demo
-
-Technology Used
-
-Prerequisites & API Keys
-
-Installation
-
-Running the Bot
-
-Inviting the Bot to Your Server
-
-Usage
-
-Customization
-
-Further Exploration
-
-Disclaimer
-
-Contributing
-
-License
-
-Hosting: Keeping the Bot Alive 24/7 (Replit + Keep-Alive)
-
-Overview
-
-The DiscordChatBot project demonstrates a Python-based Discord bot that interacts within a server, utilizing the OpenAI GPT-4.0 model for generating human-like responses. This bot is designed to maintain conversational context, ensuring dynamic and relevant interactions. By combining AI-driven responses with Discord's interactive platform, it opens up a world of engaging and lifelike conversations.
-
-Key Features
-
-Discord Bot Integration: The bot interacts within Discord servers, responding to mentions, facilitating conversations, and generating replies based on user input.
-
-OpenAI GPT-4.0 Integration: Leverages the powerful text-davinci-003 model to generate coherent and contextually relevant responses, making interactions more natural.
-
-Chat History Management: The bot stores the last 10 messages in a conversation to maintain context and deliver better replies. This helps to generate more relevant and consistent responses in ongoing conversations.
-
-Message Similarity Handling: Uses Python’s difflib library to prevent repetition by comparing consecutive messages and ensuring a diverse range of responses.
-
-Dynamic Prompt Generation: Customizes prompts by including chat history and user input to maintain the flow of conversation. This ensures the bot generates responses that are coherent and contextually aware.
-
-Token Management: Limits responses to within OpenAI's token restriction (max_tokens=256) to ensure concise and meaningful interactions.
-
-Asynchronous Processing: Built using Discord.py, the bot can handle multiple messages asynchronously, ensuring a smooth experience even in larger servers.
-
-Demo
-
-Here’s a quick look at the DiscordChatBot in action:
-
-Technology Used
-
-Python: Core language used to implement the bot and manage its functionalities.
-
-Discord.py: A Python library that interfaces with the Discord API, allowing for seamless bot integration.
-
-OpenAI API: Provides access to OpenAI’s GPT-3.5 model for generating responses.
-
-difflib: A standard Python library that handles message similarity, ensuring the bot provides varied responses.
-
-.env Files: Used to store sensitive bot credentials securely.
-
-Prerequisites & API Keys
-
-Before you begin, you'll need:
-
-A Discord bot token from the Discord Developer Portal.
-
-An OpenAI API key from the OpenAI website.
+Python 3.8+
+Discord Bot Token (Get one here)
+AI API Key (choose your provider)
 
 Installation
 
-To get started with the DiscordChatbot project, follow these steps:
+Clone the repository
+bashgit clone https://github.com/yourusername/discord-multi-ai-chatbot.git
+cd discord-multi-ai-chatbot
 
-Clone the repository to your local machine:
+Install dependencies
+bashpip install discord.py python-dotenv requests
 
-git clone https://github.com/saurav714/DiscordChatBot-main.git
+Create environment file
+bashcp .env.example .env
 
-Navigate to the project directory:
+Configure your .env file
+env# Required
+DISCORD_PASS_KEY=your_discord_bot_token
 
-cd DiscordChatBot
+# Choose your AI provider
+AI_PROVIDER=deepseek  # Options: openai, deepseek, anthropic, together, groq, local
 
-Create a new file in the root directory of the project and name it .env.
+# Add your API key (only the one you're using)
+DEEPSEEK_API_KEY=your_deepseek_api_key
 
-Inside the .env file, add your Discord bot token and OpenAI API key in the format given in .env.example
-
-DISCORD_PASS_KEY=YOUR_DISCORD_BOT_TOKEN
-OPENAI_API_KEY=YOUR_OPENAI_API_KEY
-
-Save and close the .env file.
-
-Run the bot using the provided code, and it will use the keys you've provided in the .env file to connect to Discord and use the OpenAI API.
-
-Running the Bot
-
-Install dependencies:
-
-pip install discord.py openai python-dotenv
-
-Then run your bot:
-
-python main.py
-
-Inviting the Bot to Your Server
-
-Go to the Discord Developer Portal, select your bot.
-
-Navigate to OAuth2 > URL Generator.
-
-Select the bot scope and assign permissions like Read Messages, Send Messages, etc.
-
-Copy the URL, open in your browser, and invite the bot to your server.
-
-Usage
-
-Mention the Bot: To initiate a conversation, mention the bot in a message.
-
-Auto-Response: The bot will reply with a context-aware, AI-generated response.
-
-Customization
-
-OpenAI Model Parameters: Adjust temperature, max_tokens, etc., for different behaviors.
-
-Message Similarity Threshold: Default 0.7 using difflib, adjust for creativity.
-
-Chat History: Modify MAX_CHAT_HISTORY to change context depth.
-
-Further Exploration
-
-Enhance prompt formatting.
-
-Add command support or features.
-
-Multi-language or sentiment-aware responses.
-
-Disclaimer
-
-This bot is an example for educational purposes. OpenAI's model responses may vary and may not always reflect accurate or appropriate content.
+Run the bot
+bashpython main.py
 
 
-Pull requests welcome! Fork, create a new branch, and submit your improvements.
+🔧 Supported AI Providers
+ProviderModelsCostSpeedNotesOpenAIGPT-4, GPT-3.5$$$FastIndustry standardDeepSeekDeepSeek R1$FastMost cost-effectiveAnthropicClaude Haiku/Sonnet$$FastGreat reasoningTogether AILlama, Mixtral$MediumOpen source modelsGroqLlama, MixtralFree tierUltra-fastBest for speedLocalOllama, LM StudioFreeVariesComplete privacy
+⚙️ Configuration
+Environment Variables
+env# Required Settings
+DISCORD_PASS_KEY=your_discord_bot_token
+AI_PROVIDER=deepseek
 
-Hosting: Keeping the Bot Alive 24/7 (Replit + Keep-Alive)
+# API Keys (add only what you need)
+OPENAI_API_KEY=sk-...
+DEEPSEEK_API_KEY=your_key
+ANTHROPIC_API_KEY=your_key
+TOGETHER_API_KEY=your_key
+GROQ_API_KEY=your_key
 
-To run your bot 24/7, you can deploy it on Replit, a free browser-based Python IDE.
+# Optional Customization
+MAX_CHAT_HISTORY=10          # Number of messages to remember
+SIMILARITY_THRESHOLD=0.7     # Prevent repetitive responses (0.0-1.0)
+AI_TEMPERATURE=0.7           # Response creativity (0.0-2.0)
+AI_MAX_TOKENS=256           # Maximum response length
+Provider-Specific Setup
+<details>
+<summary><b>🔵 OpenAI Setup</b></summary>
+envAI_PROVIDER=openai
+OPENAI_API_KEY=sk-your_openai_api_key
+Get your API key: OpenAI Platform
+</details>
+<details>
+<summary><b>🟢 DeepSeek Setup (Recommended - Cheapest)</b></summary>
+envAI_PROVIDER=deepseek
+DEEPSEEK_API_KEY=your_deepseek_api_key
+Get your API key: DeepSeek Platform
+</details>
+<details>
+<summary><b>🟠 Anthropic Claude Setup</b></summary>
+envAI_PROVIDER=anthropic
+ANTHROPIC_API_KEY=sk-ant-your_key
+Get your API key: Anthropic Console
+</details>
+<details>
+<summary><b>🟡 Groq Setup (Fastest)</b></summary>
+envAI_PROVIDER=groq
+GROQ_API_KEY=your_groq_api_key
+Get your API key: Groq Console
+</details>
+<details>
+<summary><b>🔴 Local Setup (Free)</b></summary>
+envAI_PROVIDER=local
+# No API key needed
+Install Ollama and run:
+bashollama serve
+ollama pull llama3.2
+</details>
+🎮 Usage
 
-1. Add keep_alive.py
+Invite the bot to your server
 
-Create keep_alive.py:
+Go to Discord Developer Portal
+Select your bot → OAuth2 → URL Generator
+Select bot scope and required permissions
+Use the generated URL to invite your bot
 
-from flask import Flask
+
+Start chatting
+@YourBot Hello! How are you today?
+
+
+The bot will respond naturally and maintain conversation context!
+🏗️ Project Structure
+discord-multi-ai-chatbot/
+├── main.py              # Main bot code
+├── keep_alive.py        # For 24/7 hosting (optional)
+├── requirements.txt     # Python dependencies
+├── .env.example        # Environment template
+├── .env               # Your configuration (create this)
+├── README.md          # This file
+└── LICENSE           # MIT License
+🌐 24/7 Hosting
+Option 1: Replit (Free)
+
+Create a new Python Repl on Replit
+Upload your project files
+Add environment variables in the Secrets tab
+Add keep_alive.py for continuous running:
+
+pythonfrom flask import Flask
 from threading import Thread
 
 app = Flask('')
@@ -172,39 +147,78 @@ def keep_alive():
     t = Thread(target=run)
     t.start()
 
-2. Modify main.py
+Modify main.py to include:
 
-Import and call keep_alive at the top:
-
-from keep_alive import keep_alive
+pythonfrom keep_alive import keep_alive
 keep_alive()
-client.run(my_secret)
+# ... rest of your code
 
-3. Deploy to Replit
+Use UptimeRobot to ping your Repl every 5 minutes
 
-Create a new Python Repl.
+Option 2: Railway/Render (Paid)
+Deploy to Railway or Render for more reliable hosting.
+🎨 Customization
+Bot Personality
+Edit the system message in main.py:
+python{
+    "role": "system", 
+    "content": "You are MyBot, a helpful assistant who loves gaming and memes..."
+}
+Response Parameters
+Adjust AI behavior:
+envAI_TEMPERATURE=0.9      # More creative (0.0 = deterministic, 2.0 = very random)
+AI_MAX_TOKENS=512      # Longer responses
+SIMILARITY_THRESHOLD=0.5  # Allow more similar responses
+Advanced Features
 
-Upload project files.
+Add command support
+Implement role-based permissions
+Add multi-language support
+Create custom conversation modes
 
-Add secrets from .env using the Replit Secrets tab.
+🔍 Troubleshooting
+Common Issues
+Bot not responding?
 
-Run your bot.
+Check if bot has Read Messages and Send Messages permissions
+Ensure you're mentioning the bot (@YourBot)
+Verify your API key is valid
 
-4. Ping with UptimeRobot
+API errors?
 
-Go to UptimeRobot
+Check your API key and billing status
+Try switching to a different provider
+Check the console for detailed error messages
 
-Create HTTP(s) monitor.
+Rate limiting?
 
-Use your Replit URL (https://your-repl-name.username.repl.co/)
+DeepSeek/Groq have generous free tiers
+Consider using local models for unlimited usage
 
-Set interval to 5 minutes.
+Debug Mode
+Enable detailed logging by adding to your .env:
+envDEBUG=true
+📊 Cost Comparison
+ProviderCost per 1M tokensFree tierBest forDeepSeek~$0.14YesBudget-consciousGroqFreeGenerousSpeed & free usageOpenAI~$3.00$5 creditPremium qualityClaude~$1.25LimitedReasoning tasksLocal$0UnlimitedPrivacy & control
+🤝 Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-License
+Fork the repository
+Create your feature branch (git checkout -b feature/AmazingFeature)
+Commit your changes (git commit -m 'Add some AmazingFeature')
+Push to the branch (git push origin feature/AmazingFeature)
+Open a Pull Request
 
-MIT License.
+📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
+⭐ Show Your Support
+If this project helped you, please give it a ⭐ star on GitHub!
+📞 Support
+
+📧 Create an issue for bug reports
+💬 Discussions for questions and ideas
+📖 Check the wiki for detailed guides
 
 
-
-
-
+Made with ❤️ for the Discord community
+Remember to keep your API keys secure and never commit them to public repositories!
