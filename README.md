@@ -23,7 +23,7 @@ AI API Key (choose your provider)
 Installation
 
 Clone the repository
-bashgit clone https://github.com/yourusername/discord-multi-ai-chatbot.git
+bashgit clone https://github.com/saurav714/DiscordChatBot-main.git
 cd discord-multi-ai-chatbot
 
 Install dependencies
