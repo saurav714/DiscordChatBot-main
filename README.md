@@ -34,13 +34,13 @@ Hosting: Keeping the Bot Alive 24/7 (Replit + Keep-Alive)
 
 Overview
 
-The DiscordChatBot project demonstrates a Python-based Discord bot that interacts within a server, utilizing the OpenAI GPT-3.5 model for generating human-like responses. This bot is designed to maintain conversational context, ensuring dynamic and relevant interactions. By combining AI-driven responses with Discord's interactive platform, it opens up a world of engaging and lifelike conversations.
+The DiscordChatBot project demonstrates a Python-based Discord bot that interacts within a server, utilizing the OpenAI GPT-4.0 model for generating human-like responses. This bot is designed to maintain conversational context, ensuring dynamic and relevant interactions. By combining AI-driven responses with Discord's interactive platform, it opens up a world of engaging and lifelike conversations.
 
 Key Features
 
 Discord Bot Integration: The bot interacts within Discord servers, responding to mentions, facilitating conversations, and generating replies based on user input.
 
-OpenAI GPT-3.5 Integration: Leverages the powerful text-davinci-003 model to generate coherent and contextually relevant responses, making interactions more natural.
+OpenAI GPT-4.0 Integration: Leverages the powerful text-davinci-003 model to generate coherent and contextually relevant responses, making interactions more natural.
 
 Chat History Management: The bot stores the last 10 messages in a conversation to maintain context and deliver better replies. This helps to generate more relevant and consistent responses in ongoing conversations.
 
@@ -82,7 +82,7 @@ To get started with the DiscordChatbot project, follow these steps:
 
 Clone the repository to your local machine:
 
-git clone https://github.com/Sh1v4nk/DiscordChatBot.git
+git clone https://github.com/saurav714/DiscordChatBot-main.git
 
 Navigate to the project directory:
 
