@@ -54,8 +54,8 @@ Installation
 
 Clone the Repository
 
-git clone https://github.com/yourusername/ModernChatterBot.git
-cd ModernChatterBot
+git clone https://github.com/saurav714/DiscordChatBot-main.git
+cd DiscordChatBot-main
 
 
 
