@@ -54,7 +54,7 @@ Installation
 
 Clone the Repository
 
-git clone https://github.com/saurav714/DiscordChatBot-main.git
+git clone https://github.com/saurav714/ModernChatBot-main.git
 cd DiscordChatBot-main
 
 
