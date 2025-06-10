@@ -69,7 +69,7 @@ Set Up Environment VariablesCreate a .env file in the project root and add the f
 
 # Required
 DISCORD_PASS_KEY=your_discord_bot_token_here
-GROQ_API_KEY=your_groq_api_key
+GROQ_API_KEY=your_groq_api_key # other can be but just like OPENAI_API_KEY
 TAVILY_API_KEY=your_tavily_api_key
 
 # Optional
