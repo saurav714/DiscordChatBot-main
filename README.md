@@ -6,7 +6,7 @@ Features
 
 
 
-
+debug.py is used to check your api is working or not
 
 Web Search with Tavily: Use the /search slash command to query the web with configurable depth ("basic" for quick results, "advanced" for deeper analysis).
 
