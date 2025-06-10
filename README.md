@@ -67,21 +67,23 @@ pip install discord.py python-dotenv aiohttp langchain langchain-community sente
 
 Set Up Environment VariablesCreate a .env file in the project root and add the following:
 
-DISCORD_PASS_KEY=your_discord_bot_token
+# Required
+DISCORD_PASS_KEY=your_discord_bot_token_here
+GROQ_API_KEY=your_groq_api_key
 TAVILY_API_KEY=your_tavily_api_key
-AI_PROVIDER=openai  # Optional, for chat features
-OPENAI_API_KEY=your_openai_api_key  # Optional, if using OpenAI for chat
-AI_TEMPERATURE=0.7  # Optional, AI response creativity
-AI_MAX_TOKENS=1024  # Optional, max response length
-AI_RETRIES=3  # Optional, API retry attempts
-TAVILY_MAX_RESULTS=5  # Optional, max search results
-MAX_CHAT_HISTORY=20  # Optional, chat history limit
-SIMILARITY_THRESHOLD=0.65  # Optional, response similarity check
-MEMORY_CLEANUP_INTERVAL=3600  # Optional, cleanup interval (seconds)
-INACTIVE_CHANNEL_TIMEOUT=86400  # Optional, inactive channel timeout (seconds)
-MAX_MESSAGE_LENGTH=1900  # Optional, max message length
-CHROMA_PERSIST_DIR=./chroma_db  # Optional, vector store directory
 
+# Optional
+AI_PROVIDER=groq
+AI_TEMPERATURE=0.7
+AI_MAX_TOKENS=1024
+AI_RETRIES=3
+TAVILY_MAX_RESULTS=5
+MAX_CHAT_HISTORY=20
+SIMILARITY_THRESHOLD=0.65
+MEMORY_CLEANUP_INTERVAL=3600
+INACTIVE_CHANNEL_TIMEOUT=86400
+MAX_MESSAGE_LENGTH=1900
+CHROMA_PERSIST_DIR=./chroma_db
 
 
 
