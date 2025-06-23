@@ -1,76 +1,56 @@
 ModernChatterBot
+A modern, AI-powered Discord bot with advanced web search capabilities using the Tavily API, built with Python and discord.py. Ideal for interactive Discord communities, this bot supports slash commands, error handling, and configurable features for a seamless user experience.
 
-A modern, AI-powered Discord bot with advanced web search capabilities using the Tavily API, built with Python and Discord.py. This bot supports slash commands for web searches, robust error handling, and user-friendly features, making it perfect for interactive Discord communities.
+🌟 Features
+🔍 Web Search with Tavily
+Use the /search slash command with configurable depth (basic for quick, advanced for deep analysis).
 
-Features
+⚠️ Enhanced Error Handling
+Smart retry logic for rate limits, timeouts, and API errors with detailed logging.
 
+🧾 User-Friendly Results
+Clean Discord embeds with titles, snippets, direct links, and AI-generated summaries.
 
+⚙️ Flexible Configuration
+Customize parameters such as search domains, image inclusion, memory, and chat length.
 
-debug.py is used to check your api is working or not
+🛡️ Content Filtering
+Ensures all queries and responses are safe and appropriate.
 
-Web Search with Tavily: Use the /search slash command to query the web with configurable depth ("basic" for quick results, "advanced" for deeper analysis).
+🧪 Debug Mode
+Includes debug.py for testing your API integrations.
 
+🔧 Prerequisites
+Python 3.8+
 
+Discord bot token (Discord Developer Portal)
 
-Enhanced Error Handling: Handles rate limits, timeouts, and API errors with retries and detailed logging.
+Tavily API key (Tavily.com)
 
+(Optional) AI Provider API key (Groq, OpenAI, Claude, etc.)
 
-
-User-Friendly Results: Search results are presented in a clean Discord embed with titles, snippets, links, and a summary (if available).
-
-
-
-Flexible Configuration: Supports customization of search parameters like domains and image inclusion.
-
-
-
-Content Filtering: Ensures all inputs and outputs are safe and appropriate.
-
-Prerequisites
-
-
-
-
-
-Python 3.8 or higher
-
-
-
-A Discord bot token from the Discord Developer Portal
-
-
-
-A Tavily API key from Tavily
-
-
-
-Required Python packages (see Installation)
-
-Installation
-
-
-
-
-
-Clone the Repository
-
+📦 Installation
+1. Clone the Repository
+bash
+Copy
+Edit
 git clone https://github.com/saurav714/ModernChatBot-main.git
-cd DiscordChatBot-main
-
-
-
-Install DependenciesInstall the required Python packages using pip:
-
+cd ModernChatBot-main
+2. Install Dependencies
+bash
+Copy
+Edit
 pip install discord.py python-dotenv aiohttp langchain langchain-community sentence-transformers
+3. Set Up Environment Variables
+Create a .env file in the project root:
 
-
-
-Set Up Environment VariablesCreate a .env file in the project root and add the following:
-
+env
+Copy
+Edit
 # Required
 DISCORD_PASS_KEY=your_discord_bot_token_here
-GROQ_API_KEY=your_groq_api_key # other can be but just like OPENAI_API_KEY
 TAVILY_API_KEY=your_tavily_api_key
+GROQ_API_KEY=your_groq_api_key  # or OPENAI_API_KEY / CLAUDE_API_KEY
 
 # Optional
 AI_PROVIDER=groq
@@ -84,179 +64,80 @@ MEMORY_CLEANUP_INTERVAL=3600
 INACTIVE_CHANNEL_TIMEOUT=86400
 MAX_MESSAGE_LENGTH=1900
 CHROMA_PERSIST_DIR=./chroma_db
+🤖 Invite the Bot to Your Discord Server
+Go to the Discord Developer Portal
 
+Select your bot → Bot tab → Copy token.
 
+Go to OAuth2 → URL Generator:
 
+Scopes: bot, applications.commands
 
-Replace your_discord_bot_token with your Discord bot token.
-
-
-
-Replace your_tavily_api_key with your Tavily API key.
-
-
-
-Invite the Bot to Your Server
-
-
-
-
-
-Go to the Discord Developer Portal.
-
-
-
-Select your application, go to "Bot" tab, and copy the token.
-
-
-
-Under "OAuth2" > "URL Generator", select bot and applications.commands scopes.
-
-
-
-Grant permissions: Send Messages, Embed Links, Read Message History.
-
-
+Bot Permissions: Send Messages, Embed Links, Read Message History
 
 Use the generated URL to invite the bot to your server.
 
-Usage
-
-
-
-
-
-Run the BotStart the bot with:
-
+🚀 Usage
+Start the Bot
+bash
+Copy
+Edit
 python bot.py
+Once started, the bot will log in, sync slash commands, and be ready for use.
 
-The bot will log in, sync slash commands, and be ready to use.
+Slash Commands
+Command	Description
+/search	Web search using Tavily API
+/chat	Chat with AI (Groq/OpenAI/Claude/etc.)
+/preferences	Customize your AI response preferences
+/stats	View bot statistics
+/clear	Clear chat history in the current channel
+/help	Display help information
 
-
-
-Search the Web
-
-
-
-
-
-Use the /search slash command in Discord:
-
+Example Search Command
+bash
+Copy
+Edit
 /search query:"latest AI news" depth:advanced
+query: Your search topic.
 
+depth: Choose between basic and advanced.
 
+📈 Logging
+Logs are stored in bot.log, including:
 
+Timestamps
 
+Search success/failure
 
-query: Your search term (e.g., "latest AI news").
+API errors and retries
 
-
-
-depth: Choose "Basic" (quick) or "Advanced" (deeper analysis).
-
-
-
-The bot responds with an embed containing up to 3 results, a summary (if available), search depth, and response time.
-
-
-
-Available Commands
-
-
-
-
-
-/search <query> [depth]: Search the web using Tavily.
-
-
-
-/chat <message>: Chat with the AI (if configured with an AI provider).
-
-
-
-/preferences: Customize AI response settings.
-
-
-
-/stats: View bot statistics.
-
-
-
-/clear: Clear chat history in the current channel.
-
-
-
-/help: Show help information.
-
-Key Improvements
-
-
-
-
-
-Configurable Search Depth: Choose "basic" or "advanced" search depth via the /search command.
-
-
-
-Enhanced Error Handling: Robust retry logic for rate limits, timeouts, and server errors, with detailed logging.
-
-
-
-Better Result Presentation: Search results in a Discord embed with depth and response time in the footer.
-
-
-
-Flexibility: Supports future customization with domain inclusion/exclusion and image options.
-
-
-
-Content Filtering: Filters inputs and outputs for safety and appropriateness.
-
-Logging
-
-
-
-
-
-Logs are saved to bot.log in the project directory.
-
-
-
-Includes timestamps, success/failure of searches, and error details for debugging.
-
-Contributing
-
-
-
-
-
+🤝 Contributing
 Fork the repository.
 
+Create a feature branch:
 
+bash
+Copy
+Edit
+git checkout -b feature/YourFeature
+Make changes and commit:
 
-Create a new branch (git checkout -b feature/YourFeature).
+bash
+Copy
+Edit
+git commit -m "Add YourFeature"
+Push and open a pull request.
 
+📜 License
+This project is licensed under the MIT License.
 
+📬 Contact
+For suggestions, issues, or collaborations, feel free to:
 
-Make your changes and commit (git commit -m "Add YourFeature").
+Open an issue here on GitHub
 
+Reach out on Discord: saurav1099
 
-
-Push to the branch (git push origin feature/YourFeature).
-
-
-
-Open a pull request.
-
-License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-Contact
-
-For issues or suggestions, open an issue on GitHub or contact Arise Tarnished Warrior
-saurav1099(Discord).
-
-
-
-Built with ❤️ by Saurav on June 08, 2025
+Built with ❤️ by Saurav — Arise, Tarnished Warrior!
+Created on June 08, 2025
